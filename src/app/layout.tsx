@@ -1,20 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { Inter, IBM_Plex_Mono } from "next/font/google";
-
-const inter = Inter({
-	variable: "--font-inter",
-	subsets: ["latin"],
-	display: "swap",
-});
-
-const ibm_plex_mono = IBM_Plex_Mono({
-	weight: ["300", "400", "500", "600", "700"],
-	style: ["normal", "italic"],
-	variable: "--font-ibm-plex-mono",
-	subsets: ["latin"],
-	display: "swap",
-});
+import "../styles/globals.css";
+import { ibmPlexMono, tektur } from "../fonts";
+import NavBar from "@/components/NavBar";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -27,8 +14,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${inter.variable} ${ibm_plex_mono.variable}`}>
+		<html lang="en" className={`${ibmPlexMono.className} ${tektur.className}`}>
+			<body>
+				<NavBar />
 				{children}
 			</body>
 		</html>

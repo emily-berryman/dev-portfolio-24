@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { ibmPlexMono } from "../fonts";
 import NavBar from "@/components/NavBar";
-import GlobalStyles from "@/styles/GlobalStyles";
+import GlobalStyles from "@/lib/GlobalStyles";
+import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -15,10 +16,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className={ibmPlexMono.className}>
-			<GlobalStyles />
 			<body>
-				<NavBar />
-				{children}
+				<GlobalStyles />
+				<StyledComponentsRegistry>
+					<NavBar />
+					{children}
+				</StyledComponentsRegistry>
 			</body>
 		</html>
 	);

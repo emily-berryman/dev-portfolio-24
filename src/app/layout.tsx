@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "../styles/globals.css";
-import { ibmPlexMono, tektur } from "../fonts";
+import { ibmPlexMono } from "../fonts";
 import NavBar from "@/components/NavBar";
+import GlobalStyles from "@/styles/GlobalStyles";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -14,7 +14,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className={`${ibmPlexMono.className} ${tektur.className}`}>
+		<html lang="en" className={ibmPlexMono.className}>
+			<GlobalStyles />
 			<body>
 				<NavBar />
 				{children}

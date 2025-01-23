@@ -181,7 +181,13 @@ h6 {
 	--font-size-h1: 1.75rem; //28
 	--font-size-title: 2.125rem; //34
 
-	--grey-background: #e8e8e8;
+	--light-gray: #e8e8e8;
+	--medium-gray: #d9d9d9;
+	--black: #232323;
+	--white: #ffffff;
+	--primary-green: #CCFF05;
+  --secondary-blue: #0000ff;
+
 	--desktop-padding-standard: 0 152px;
 }
 `;

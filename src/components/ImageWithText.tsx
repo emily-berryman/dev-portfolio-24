@@ -6,12 +6,12 @@ import styled from "styled-components";
 
 function ImageWithText() {
 	return (
-		<AboutSection>
+		<SectionWrapper id="about">
 			<ImgWrapper>
 				<Image src="/abstract.png" alt="" width={279} height={279} />
 			</ImgWrapper>
-			<AboutInfo>
-				<h2 id="About">About</h2>
+			<TextWrapper>
+				<h2>About</h2>
 				<p>
 					Regular body text. Duis nisi nibh, lobortis at interdum eu, pretium
 					non ante. Cras bibendum Vestibulum ex nisl, consectetur id augue ac,
@@ -21,13 +21,13 @@ function ImageWithText() {
 					malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur
 					vehicula rutrum.
 				</p>
-			</AboutInfo>
-		</AboutSection>
+			</TextWrapper>
+		</SectionWrapper>
 	);
 }
 
-const AboutSection = styled.section`
-	background-color: var(--grey-background);
+const SectionWrapper = styled.section`
+	background-color: var(--light-gray);
 	display: flex;
 	padding: 48px 0;
 	gap: 48px;
@@ -39,7 +39,7 @@ const ImgWrapper = styled.div`
 	justify-content: flex-end;
 `;
 
-const AboutInfo = styled.div`
+const TextWrapper = styled.div`
 	flex-basis: 66.6%;
 	max-width: 291px;
 

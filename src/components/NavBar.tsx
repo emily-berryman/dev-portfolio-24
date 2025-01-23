@@ -1,21 +1,29 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
+import StrikethroughLink from "./Link/StrikethroughLink";
 
 function NavBar() {
 	return (
 		<Header>
-			<Nav>
-				<li>
-					<a href="#work">Work</a>
-				</li>
-				<li>
-					<a href="#about">About</a>
-				</li>
-				<li>
-					<a href="#contact">Contact</a>
-				</li>
-			</Nav>
+			<nav>
+				<List>
+					<li>
+						<StrikethroughLink href="#work" linkText="Work" color="black" />
+					</li>
+					<li>
+						<StrikethroughLink href="#about" linkText="About" color="black" />
+					</li>
+					<li>
+						<StrikethroughLink
+							href="#contact"
+							linkText="Contact"
+							color="var(--black)"
+						/>
+					</li>
+				</List>
+			</nav>
 		</Header>
 	);
 }
@@ -23,9 +31,9 @@ function NavBar() {
 const Header = styled.header`
 	position: sticky;
 	top: 0;
+	z-index: 1;
 `;
-
-const Nav = styled.nav`
+const List = styled.ul`
 	min-height: 36px;
 	display: flex;
 	justify-content: flex-end;

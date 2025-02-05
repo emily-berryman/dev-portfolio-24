@@ -168,7 +168,7 @@ h6 {
 	--font-weight-semi-bold: 600;
 	--font-weight-bold: 700;
 
-	--font-family: "IBM Plex Mono", "serif";
+	--primary-font: "IBM Plex Mono", "serif";
 	--font-family-title: "Tektur", "serif";
 	--font-letter-spacing: 0.3rem;
 
@@ -179,16 +179,16 @@ h6 {
 	--font-size-h3: 1.25rem; // 20
 	--font-size-h2: 1.375rem; //22
 	--font-size-h1: 1.75rem; //28
-	--font-size-title: 2.125rem; //34
+	--font-size-title: 2.125; //34
 
-	--light-gray: #e8e8e8;
-	--medium-gray: #d9d9d9;
+	--light-grey: #e8e8e8;
+	--medium-grey: #d9d9d9;
 	--black: #232323;
 	--white: #ffffff;
 	--primary-green: #CCFF05;
   --secondary-blue: #0000ff;
 
-	--desktop-padding-standard: 0 152px;
+	--desktop-horizontal-margin: 152px;
 }
 `;
 export default GlobalStyles;

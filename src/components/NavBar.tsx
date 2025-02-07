@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
+import { QUERIES } from "../constants.js";
 import styled from "styled-components";
-import Link from "next/link";
 import StrikethroughLink from "./Link/StrikethroughLink";
 
 function NavBar() {
@@ -29,25 +29,28 @@ function NavBar() {
 }
 
 const Header = styled.header`
-	position: sticky;
+	/* position: sticky;
 	top: 0;
-	z-index: 1;
+	z-index: 1; */
 `;
+
 const List = styled.ul`
-	min-height: 36px;
+	/* min-height: 36px; */
 	display: flex;
-	justify-content: flex-end;
 	gap: 32px;
-	background: white;
-	align-items: center;
-	padding: 0 24px;
-	border-bottom: 1px solid grey;
-	font-family: "IBM Plex Mono", "serif";
+	background: var(--white);
+	/* padding: 0 24px; */
+	font-family: var(--primary-font);
 	text-transform: uppercase;
-	color: #232323;
-	font-weight: 400;
+	color: var(--black);
+	font-weight: var(--font-weight-normal);
 	letter-spacing: 0.3rem;
 	list-style: none;
+
+	@media ${QUERIES.mobileAndDown} {
+		font-size: var(--font-size-small);
+		gap: 16px;
+	}
 `;
 
 export default NavBar;

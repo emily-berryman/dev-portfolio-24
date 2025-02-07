@@ -3,12 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
+import { QUERIES } from "@/constants";
 
 function ImageWithText() {
 	return (
 		<SectionWrapper id="about">
 			<ImgWrapper>
-				<Image src="/abstract.png" alt="" width={279} height={279} />
+				<StyledImage src="/abstract.png" alt="" width={279} height={279} />
 			</ImgWrapper>
 			<TextWrapper>
 				<h2>About</h2>
@@ -26,22 +27,60 @@ function ImageWithText() {
 	);
 }
 
+// const FullWidth = styled.div`
+// 	grid-column: 1 / -1;
+// 	background-color: pink;
+// `;
 const SectionWrapper = styled.section`
-	background-color: var(--light-gray);
+	background-color: var(--light-grey);
 	display: flex;
-	padding: 48px 0;
+	flex-wrap: wrap;
 	gap: 48px;
+	/* display: grid; */
+	/* grid-template-rows: 1fr;
+	grid-template-columns: 1fr min(50ch, 100%) 1fr; */
+	padding: 48px 152px;
+
+	@media ${QUERIES.tabletAndDown} {
+		padding-left: 80px;
+		padding-right: 80px;
+	}
+
+	@media ${QUERIES.mobileAndDown} {
+		padding-left: 48px;
+		padding-right: 48px;
+	}
+
+	@media ${QUERIES.smallMobileAndDown} {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
 `;
 
 const ImgWrapper = styled.div`
-	flex-basis: 33.3%;
 	display: flex;
-	justify-content: flex-end;
+	min-width: 0;
+`;
+
+const StyledImage = styled(Image)`
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	min-width: 0; // to ensure that image will scale smaller
 `;
 
 const TextWrapper = styled.div`
-	flex-basis: 66.6%;
-	max-width: 291px;
+	flex: 1 1 290px;
+
+	@media ${QUERIES.laptopAndDown} {
+		max-width: 35ch;
+	}
+
+	@media ${QUERIES.laptopAndDown} {
+		max-width: 30ch;
+	}
+	@media (max-width: 48.5rem) {
+		max-width: fit-content;
+	}
 
 	h2 {
 		font-size: var(--font-size-h3);

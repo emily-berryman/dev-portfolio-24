@@ -1,23 +1,22 @@
-import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
 interface StrikethroughLinkProps {
 	href: string;
 	linkText: string;
-	color?: string;
 	target?: string;
+	ariaLabel?: string;
 }
 
 function StrikethroughLink({
 	href,
 	linkText,
-	color,
 	target,
+	ariaLabel,
 }: StrikethroughLinkProps) {
 	return (
-		<Span color={color}>
-			<NavLink target={target} color={color} as={Link} href={href}>
+		<Span>
+			<NavLink target={target} as={Link} href={href} aria-label={ariaLabel}>
 				{linkText}
 			</NavLink>
 		</Span>
@@ -25,18 +24,7 @@ function StrikethroughLink({
 }
 
 const NavLink = styled.a`
-	color: ${(props) => props.color};
 	text-transform: uppercase;
-
-	&:focus-visible {
-		outline: 2px solid var(--secondary-blue);
-		outline-offset: 4px;
-		border-radius: 4px;
-	}
-
-	/* &:active {
-		outline: none;
-	} */
 `;
 
 const Span = styled.span`
@@ -52,7 +40,7 @@ const Span = styled.span`
 		height: 2px;
 		top: 50%;
 		margin-top: 0.5px;
-		background: ${(props) => props.color};
+		background: var(--secondary-color);
 	}
 
 	&::before {
@@ -62,12 +50,12 @@ const Span = styled.span`
 	&::after {
 		content: "";
 		right: 2.5px;
-		background: ${(props) => props.color};
+		background: var(--secondary-color);
 		transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 	}
 
 	&:hover::before {
-		background: ${(props) => props.color};
+		background: var(--secondary-color);
 		width: 100%;
 		transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 	}

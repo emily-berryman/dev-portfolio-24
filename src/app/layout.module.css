@@ -1,0 +1,24 @@
+.pageWrapper {
+	display: grid;
+	grid-template-rows: 2.5rem 1fr 2rem;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:
+		"header header header"
+		"main main main"
+		"footer footer footer";
+	min-height: 100%;
+}
+
+.main {
+	grid-area: main;
+	overflow: hidden;
+}
+
+.footer {
+	grid-area: footer;
+	display: grid;
+	place-content: center;
+	border-top: 1px solid var(--medium-grey);
+	background: var(--white);
+	text-transform: uppercase;
+}

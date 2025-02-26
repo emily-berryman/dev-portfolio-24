@@ -2,50 +2,42 @@
 import React from "react";
 import { QUERIES } from "../constants.js";
 import styled from "styled-components";
-import StrikethroughLink from "./Link/StrikethroughLink";
+import StrikethroughLink from "@/components/Link/StrikethroughLink";
 
 function NavBar() {
 	return (
-		<Header>
-			<nav>
-				<List>
-					<li>
-						<StrikethroughLink href="#work" linkText="Work" color="black" />
-					</li>
-					<li>
-						<StrikethroughLink href="#about" linkText="About" color="black" />
-					</li>
-					<li>
-						<StrikethroughLink
-							href="#contact"
-							linkText="Contact"
-							color="var(--black)"
-						/>
-					</li>
-				</List>
-			</nav>
-		</Header>
+		<Nav>
+			<List>
+				<li>
+					<StrikethroughLink href="/#work" linkText="Work" />
+				</li>
+				<li>
+					<StrikethroughLink href="/#about" linkText="About" />
+				</li>
+				<li>
+					<StrikethroughLink href="/#contact" linkText="Contact" />
+				</li>
+			</List>
+		</Nav>
 	);
 }
 
-const Header = styled.header`
-	/* position: sticky;
+const Nav = styled.nav`
+	grid-area: header;
+	border-bottom: 1px solid var(--medium-grey);
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 0 var(--space-l);
+	position: sticky;
 	top: 0;
-	z-index: 1; */
+	z-index: 2;
+	background: var(--white);
 `;
 
 const List = styled.ul`
-	/* min-height: 36px; */
 	display: flex;
-	gap: 32px;
-	background: var(--white);
-	/* padding: 0 24px; */
-	font-family: var(--primary-font);
-	text-transform: uppercase;
-	color: var(--black);
-	font-weight: var(--font-weight-normal);
-	letter-spacing: 0.3rem;
-	list-style: none;
+	gap: var(--space-xl);
 
 	@media ${QUERIES.mobileAndDown} {
 		font-size: var(--font-size-small);

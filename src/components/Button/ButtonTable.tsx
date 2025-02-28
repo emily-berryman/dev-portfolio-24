@@ -21,55 +21,10 @@ const ButtonTable = () => {
 					<Button variant="secondary">Button</Button>
 				</td>
 			</tr>
-			{/* <tr>
-        <td>Medium</td>
-        <td>
-          <Button size="medium" variant="fill">
-            Button
-          </Button>
-        </td>
-        <td>
-          <Button size="medium" variant="outline">
-            Button
-          </Button>
-        </td>
-      </tr>
-      <tr>
-        <td>Large</td>
-        <td>
-          <Button size="large" variant="fill">
-            Button
-          </Button>
-        </td>
-        <td>
-          <Button size="large" variant="outline">
-            Button
-          </Button>
-        </td>
-       
-      </tr> */}
 		</Table>
 	);
 };
-
-/**
- * NOTE: This `Table` component uses nesting, which
- * is something we've frowned on in this course!
- *
- * Before you label me a hypocrite, please note that
- * this component is used exclusively for demonstration
- * purposes; it exists to showcase the `Button` component,
- * and isn't something we'll use in our app. So we can
- * be a bit more lenient.
- *
- * Furthermore, we aren't "reaching across" any component
- * boundaries; no `children` prop is accepted. This is a
- * slippery slope, but it can be fine to do things this way
- * if you're disciplined!
- */
 const Table = styled.table`
-	font-family: sans-serif;
-
 	th,
 	td {
 		text-align: center;

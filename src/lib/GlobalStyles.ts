@@ -33,11 +33,17 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: normal;
 }
+html, body {
+	height: 100%;
+	max-width: 100%;
+}
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
@@ -61,7 +67,7 @@ table {
 
 	#root, #__next {
 		/* 
-		Create a stacking context, without a z-index. His ensures that all portal content 
+		Create a stacking context, without a z-index. This ensures that all portal content 
 		(modals and tooltips) will float above the Next app. 
 		*/
 		isolation: isolate;
@@ -69,8 +75,8 @@ table {
  
  
 body {
-	color: var(--color-text);
-	background: var(--color-background);
+	color: var(--black);
+	background: var(--white);
 }
 
 a {
@@ -95,14 +101,11 @@ h6 {
 	overflow-wrap: break-word;
 }
 
-a:focus {
-	outline: 5px auto var(--color-background);
-}
-
 body, p, input, button, select, option {
 	font-family: var(--font-family);
 	font-weight: var(--font-weight-light);
 	letter-spacing: var(--font-letter-spacing);
+	font-size: var(--font-size-body-text);
 }
 
 h1, h2, h3, h4, h5, h6, strong {
@@ -114,8 +117,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 p {
-	font-size: var(--font-size-body-text);
-	font-weight: var(--font-weight-light);
+	margin-bottom: 1em;
 }
 
 em {
@@ -129,6 +131,16 @@ strong {
 a {
 	color: inherit;
 	text-decoration: none;
+	
+	&:focus-visible {
+		outline: 2px solid var(--secondary-color);
+		outline-offset: 4px;
+		border-radius: 4px;
+	}
+
+	&:hover {
+		color: var(--secondary-color);
+	}
 }
 
 /* Inherit fonts for form controls */
@@ -149,20 +161,12 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
-/*
-  Create a root stacking context
-*/
-#root,
-#__next {
-	isolation: isolate;
-}
 
 /*
   CSS Variables
 */
-
 :root {
-	--font-weight-light: 300,
+	--font-weight-light: 300;
 	--font-weight-normal: 400;
 	--font-weight-medium: 500;
 	--font-weight-semi-bold: 600;
@@ -170,25 +174,50 @@ h6 {
 
 	--primary-font: "IBM Plex Mono", "serif";
 	--font-family-title: "Tektur", "serif";
-	--font-letter-spacing: 0.3rem;
 
-	--font-size-tiny: 0.8125rem; //13px
-	--font-size-small: 0.9375rem; //15px
-	--font-size-body-text: 1.0625rem; //17px
-	--font-size-h4: 1.0625rem; //17px
+	--font-letter-spacing: 0.01875rem;
+
+	--font-size-tiny: 0.8125rem; //13
+	--font-size-small: 0.9375rem; //15
+	--font-size-body-text: 1.0625rem; //17
+	--font-size-h4: 1.0625rem; //17
 	--font-size-h3: 1.25rem; // 20
+	--font-size-highlight: 1.438rem; //23
 	--font-size-h2: 1.375rem; //22
 	--font-size-h1: 1.75rem; //28
 	--font-size-title: 2.125; //34
 
-	--light-grey: #e8e8e8;
-	--medium-grey: #d9d9d9;
-	--black: #232323;
-	--white: #ffffff;
-	--primary-green: #CCFF05;
-  --secondary-blue: #0000ff;
+	--light-grey: hsl(0, 0%, 91%);
+	--medium-grey:hsl(0, 0%, 28%);
+	--black: hsl(0, 0%, 4%);
+	--white: hsl(0, 0%, 97%);
 
-	--desktop-horizontal-margin: 152px;
+	--primary-h: 73;
+	--primary-s: 100%;
+	--primary-l: 58%;
+
+	--primary-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+	--primary-color--light:  hsl(var(--primary-h), var(--primary-s), calc(var(--primary-l) + 10%));
+	--primary-color--xtra-light:  hsl(var(--primary-h), var(--primary-s), calc(var(--primary-l) + 25%));
+	--primary-color--dark: hsl(var(--primary-h), var(--primary-s), calc(var(--primary-l) - 15%));
+
+	--secondary-h: 228;
+	--secondary-s: 58%;
+	--secondary-l: 45%;
+
+  --secondary-color: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));
+
+	// Spacing
+  --space-xs: 4px;  /* Very small */
+  --space-s: 8px;   /* Small */
+  --space-m: 16px;  /* Medium */
+  --space-l: 24px;  /* Large */
+  --space-xl: 32px; /* Extra large */
+  --space-xl-2: 48px; /* Double extra large */
+  --space-xl-3: 64px; /* Triple extra large */
+  --space-xl-4: 96px; /* Quadruple extra large */
+  --space-xl-5: 128px; /* Massive */
+  --space-xl-6: 144px; /* Huge */
 }
 `;
 export default GlobalStyles;

@@ -6,6 +6,7 @@ interface StrikethroughLinkProps {
 	linkText: string;
 	target?: string;
 	ariaLabel?: string;
+	rel?: string;
 }
 
 function StrikethroughLink({
@@ -13,10 +14,17 @@ function StrikethroughLink({
 	linkText,
 	target,
 	ariaLabel,
+	rel,
 }: StrikethroughLinkProps) {
 	return (
 		<Span>
-			<NavLink target={target} as={Link} href={href} aria-label={ariaLabel}>
+			<NavLink
+				target={target}
+				as={Link}
+				href={href}
+				rel={rel}
+				aria-label={ariaLabel}
+			>
 				{linkText}
 			</NavLink>
 		</Span>

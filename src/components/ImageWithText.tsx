@@ -8,84 +8,72 @@ import { QUERIES } from "@/constants";
 function ImageWithText() {
 	return (
 		<SectionWrapper id="about">
-			<ImgWrapper>
-				<StyledImage src="/abstract.png" alt="" width={279} height={279} />
-			</ImgWrapper>
 			<TextWrapper>
-				<h2>About</h2>
-				<p>
-					Regular body text. Duis nisi nibh, lobortis at interdum eu, pretium
-					non ante. Cras bibendum Vestibulum ex nisl, consectetur id augue ac,
-					fringilla suscipit metus. Duis turpis mi, dignissim bibendum odio
-					quis, tempus dapibus nunc. Sed eu ipsum felis. Nulla facilisi.
-					Praesent interdum lacus eu consectetur fermentum. Interdum et
-					malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur
-					vehicula rutrum.
-				</p>
+				<IntroHeading>
+					Creative at heart, developer by trade — <br /> I&apos;m passionate
+					about building web experiences that are impactful, purpose-driven and
+					accessible.
+				</IntroHeading>
+				<IntroParagraph>
+					With over a decade of experience in people-focused roles across the
+					tech, arts and hospitality industries, I love to collaborate and bring
+					curiosity, creativity and care to everything I create.
+				</IntroParagraph>
 			</TextWrapper>
+			<StyledImage src="/emily-profile.jpeg" alt="" width={279} height={279} />
 		</SectionWrapper>
 	);
 }
 
-// const FullWidth = styled.div`
-// 	grid-column: 1 / -1;
-// 	background-color: pink;
-// `;
+const IntroHeading = styled.h2`
+	font-size: var(--font-size-highlight);
+	font-weight: var(--font-weight-light);
+	text-transform: uppercase;
+	padding-bottom: var(--space-m);
+
+	@media ${QUERIES.tabletAndDown} {
+		font-size: var(--font-size-h3);
+	}
+`;
+
+const IntroParagraph = styled.p`
+	font-size: var(--font-size-highlight);
+
+	@media ${QUERIES.tabletAndDown} {
+		font-size: var(--font-size-h3);
+		margin-bottom: var(--space-xl);
+	}
+`;
+
 const SectionWrapper = styled.section`
 	background-color: var(--light-grey);
 	display: flex;
 	flex-wrap: wrap;
-	gap: 48px;
-	/* display: grid; */
-	/* grid-template-rows: 1fr;
-	grid-template-columns: 1fr min(50ch, 100%) 1fr; */
-	padding: 48px 152px;
+	flex-direction: column;
+	padding: 200px var(--space-xl-6);
 
 	@media ${QUERIES.tabletAndDown} {
-		padding-left: 80px;
-		padding-right: 80px;
-	}
-
-	@media ${QUERIES.mobileAndDown} {
-		padding-left: 48px;
-		padding-right: 48px;
+		padding: 150px var(--space-xl-2);
 	}
 
 	@media ${QUERIES.smallMobileAndDown} {
-		padding-left: 24px;
-		padding-right: 24px;
+		padding-inline: var(--space-xl);
 	}
-`;
-
-const ImgWrapper = styled.div`
-	display: flex;
-	min-width: 0;
 `;
 
 const StyledImage = styled(Image)`
 	aspect-ratio: 1/1;
 	object-fit: cover;
-	min-width: 0; // to ensure that image will scale smaller
+	min-width: 0;
 `;
 
 const TextWrapper = styled.div`
-	flex: 1 1 290px;
+	flex: 1 1 auto;
+	max-width: 60%;
+	margin-left: auto;
 
-	@media ${QUERIES.laptopAndDown} {
-		max-width: 35ch;
-	}
-
-	@media ${QUERIES.laptopAndDown} {
-		max-width: 30ch;
-	}
-	@media (max-width: 48.5rem) {
+	@media (max-width: 57.5rem) {
 		max-width: fit-content;
-	}
-
-	h2 {
-		font-size: var(--font-size-h3);
-		padding-bottom: 16px;
-		text-transform: uppercase;
 	}
 `;
 

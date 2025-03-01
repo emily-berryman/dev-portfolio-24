@@ -179,7 +179,7 @@ const FeatureHeading = styled.h3`
 `;
 
 const Highlight = styled.strong`
-	background-color: var(--primary-color--light);
+	background-color: var(--secondary-color--light);
 	padding: 1px 6px;
 	border-radius: 3px;
 `;

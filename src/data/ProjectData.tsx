@@ -41,11 +41,11 @@ export const projectOverviewData = [
 				alt: "",
 			},
 			{
-				src: "/nutrition-standards-page.png",
+				src: "/featured-recipes-section.png",
 				alt: "",
 			},
 			{
-				src: "/featured-recipes-section.png",
+				src: "/nutrition-standards-page.png",
 				alt: "",
 			},
 		],

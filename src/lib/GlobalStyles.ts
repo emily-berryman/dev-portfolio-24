@@ -201,11 +201,12 @@ h6 {
 	--primary-color--xtra-light:  hsl(var(--primary-h), var(--primary-s), calc(var(--primary-l) + 25%));
 	--primary-color--dark: hsl(var(--primary-h), var(--primary-s), calc(var(--primary-l) - 15%));
 
-	--secondary-h: 228;
-	--secondary-s: 58%;
-	--secondary-l: 45%;
+	--secondary-h: 253;
+	--secondary-s: 100%;
+	--secondary-l: 58%;
 
   --secondary-color: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));
+	--secondary-color--light: hsl(244, var(--secondary-s), 97%);
 
 	// Spacing
   --space-xs: 4px;  /* Very small */

@@ -1,0 +1,27 @@
+.buttonLink {
+	font-size: var(--font-size-small);
+	padding: 10px 21px;
+	background-color: transparent;
+	border: 1px solid var(--medium-grey);
+	border-radius: 4px;
+	text-transform: uppercase;
+	width: max-content;
+}
+
+.buttonLink:hover {
+	background-color: var(--primary-color);
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	color: var(--black);
+}
+
+.buttonLink:focus-visible {
+	outline: 2px solid var(--secondary-color);
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+.buttonLink:focus,
+.buttonLink:active {
+	color: var(--secondary-color);
+}

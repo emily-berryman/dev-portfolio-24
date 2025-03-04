@@ -39,14 +39,20 @@ export const projectOverviewData = [
 			{
 				src: "/koka-recipe-page.png",
 				alt: "",
+				width: 1792,
+				height: 1365,
 			},
 			{
 				src: "/featured-recipes-section.png",
 				alt: "",
+				width: 1792,
+				height: 1344,
 			},
 			{
 				src: "/nutrition-standards-page.png",
 				alt: "",
+				width: 896,
+				height: 672,
 			},
 		],
 	},
@@ -60,14 +66,20 @@ export const projectOverviewData = [
 			{
 				src: "/ncea-subject-glossary-page.png",
 				alt: "",
+				width: 1152,
+				height: 856,
 			},
 			{
 				src: "/ncea-mobile-menu.png",
 				alt: "",
+				width: 1019,
+				height: 762,
 			},
 			{
 				src: "/ncea-assessment-activity.png",
 				alt: "",
+				width: 1792,
+				height: 1344,
 			},
 		],
 	},
@@ -113,6 +125,8 @@ export const projectCaseStudyData = [
 			{
 				imgSrc: "/koka-recipe.png",
 				alt: "",
+				width: 2017,
+				height: 1344,
 				projectSummary: [
 					"Ka ora Ka ako is a custom React and Laravel web app built for NZ’s Ministry of Education.",
 					"I worked with two other devs to develop this app from scratch, building both a public-facing site and a secure content management system.",
@@ -139,6 +153,8 @@ export const projectCaseStudyData = [
 			{
 				imageSrc: "/koka-circle-detail.png",
 				alt: "",
+				width: 481,
+				height: 416,
 			},
 		],
 		projectFunctionality: [
@@ -192,6 +208,8 @@ export const projectCaseStudyData = [
 			{
 				imageSrc: "/recipe-library-page.png",
 				alt: "",
+				width: 2124,
+				height: 1416,
 			},
 		],
 	},
@@ -202,6 +220,8 @@ export const projectCaseStudyData = [
 		projectOverviewSection: [
 			{
 				imgSrc: "/ncea-homepage.png",
+				width: 2017,
+				height: 1344,
 				alt: "",
 				projectSummary: [
 					"This project focused on rebuilding NCEA, a government website offering resources, updates and tools to help secondary teachers and schools prepare students for national qualification standards. ",
@@ -228,6 +248,8 @@ export const projectCaseStudyData = [
 			{
 				imageSrc: "/teacher-student-detail.png",
 				alt: "",
+				width: 800,
+				height: 403,
 			},
 		],
 		projectFunctionality: [
@@ -280,6 +302,8 @@ export const projectCaseStudyData = [
 			{
 				imageSrc: "/english-glossary-page.png",
 				alt: "",
+				width: 2017,
+				height: 1344,
 			},
 		],
 	},

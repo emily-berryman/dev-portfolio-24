@@ -3,8 +3,7 @@ import { Metadata } from "next";
 import { ibmPlexMono } from "../fonts";
 import NavBar from "@/components/NavBar";
 import styles from "./layout.module.css";
-import GlobalStyles from "@/lib/GlobalStyles";
-import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
+import "./global.css";
 
 export const metadata: Metadata = {
 	title: "Emily Berryman - Dev Portfolio",
@@ -20,12 +19,9 @@ export default function RootLayout({
 		<>
 			<html lang="en" className={ibmPlexMono.className}>
 				<body>
-					<GlobalStyles />
 					<div className={styles.pageWrapper}>
 						<NavBar />
-						<main className={styles.main}>
-							<StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-						</main>
+						<main className={styles.main}>{children}</main>
 						<footer className={styles.footer}>
 							<span>Emily Berryman © </span>
 						</footer>

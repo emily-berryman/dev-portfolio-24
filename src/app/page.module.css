@@ -1,0 +1,101 @@
+.introSection {
+	margin: var(--space-xl-6);
+}
+
+@media (max-width: 70rem) {
+	.introSection {
+		margin-inline: var(--space-xl-2);
+	}
+}
+
+@media (max-width: 26.35rem) {
+	.introSection {
+		margin-inline: var(--space-l);
+	}
+}
+
+.title {
+	font-family: "Tektur", "serif";
+	font-weight: var(--font-weight-bold);
+	font-size: 5.937rem;
+	min-width: fit-content;
+}
+
+@media (max-width: 70rem) {
+	.title {
+		font-size: 5rem;
+	}
+}
+
+@media (max-width: 38rem) {
+	.title {
+		font-size: 4rem;
+	}
+}
+
+@media (max-width: 26.35rem) {
+	.title {
+		font-size: 3rem;
+	}
+}
+
+.spacingSpan {
+	margin-bottom: var(--space-xl-2);
+	display: inline-block;
+}
+
+@media (max-width: 30rem) {
+	.spacingSpan {
+		margin-bottom: var(--space-l);
+	}
+}
+
+.workSection {
+	margin: 0 var(--space-xl-2) var(--space-xl-2);
+}
+
+@media (max-width: 26.35rem) {
+	.workSection {
+		margin-inline: var(--space-l);
+	}
+}
+
+.sectionHeading {
+	font-weight: var(--font-weight-semi-bold);
+	font-size: var(--font-size-h1);
+	text-transform: uppercase;
+	margin-top: var(--space-xl-2);
+	flex-basis: 33%;
+}
+
+.contactSection {
+	background-color: var(--light-grey);
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: var(--space-xl);
+	border-top: 1px solid var(--medium-grey);
+	padding: var(--space-xl-2);
+}
+
+@media (max-width: 26.35rem) {
+	.contactSection {
+		padding-inline: var(--space-l);
+	}
+}
+
+.contactHeading {
+	font-size: var(--font-size-h3);
+	text-transform: uppercase;
+}
+
+.contactDescription {
+	font-size: var(--font-size-small);
+}
+
+.linkWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-m);
+	font-size: var(--font-size-small);
+}

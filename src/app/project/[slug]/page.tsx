@@ -1,53 +1,60 @@
-"use client";
 import React from "react";
-import { useParams } from "next/navigation";
-import styled from "styled-components";
-import Button from "@/components/Button/Button";
-import { QUERIES } from "@/constants";
+import Button from "@/components/Links/ButtonLink";
 import { ArrowRight, Minus } from "lucide-react";
 import { projectCaseStudyData } from "@/data/ProjectData";
+import Image from "next/image";
+import styles from "./projectpage.module.css";
 
-function page() {
-	const { slug } = useParams<{ slug: string }>();
-
+export default async function ProjectPage({
+	params,
+}: {
+	params: Promise<{ slug: string }>;
+}) {
+	const { slug } = await params;
 	const project = slug
 		? projectCaseStudyData.find((project) => project.projectURL === slug)
 		: null;
 
 	if (!project) {
-		return <div> Project not found</div>;
+		return <div>Project not found</div>;
 	}
 
 	return (
 		<>
-			<Container>
-				<ProjectHeading>{project.projectTitle}</ProjectHeading>
-				<ProjectOverviewSection>
+			<div className={styles.container}>
+				<h1 className={styles.projectHeading}>{project.projectTitle}</h1>
+				<section className={styles.projectOverviewSection}>
 					{project.projectOverviewSection.map((overview, key) => (
 						<React.Fragment key={key}>
-							<ImgWrapper>
-								<StyledImage src={overview.imgSrc} alt={overview.alt} />
-							</ImgWrapper>
-							<TextOverviewWrapper>
+							<div className={styles.imgWrapper}>
+								<Image
+									className={styles.styledImage}
+									width={overview.width}
+									height={overview.height}
+									src={overview.imgSrc}
+									alt={overview.alt}
+								/>
+							</div>
+							<div className={styles.textOverviewWrapper}>
 								{overview.projectSummary.map((paragraph, index) => (
 									<p key={index}>{paragraph}</p>
 								))}
-								<StackAndLinkContainer>
-									<StackWrapper>
-										<SubHeading>Stack</SubHeading>
-										<StackList>
+								<div className={styles.stackAndLinkContainer}>
+									<div className={styles.stackWrapper}>
+										<h2 className={styles.subHeading}>Stack</h2>
+										<ul className={styles.stackList}>
 											{overview.techStack.map((stack, index) => (
 												<li key={index}>
-													<HyphenWrapper>
+													<span className={styles.hyphenWrapper}>
 														<Minus size={17} />
-													</HyphenWrapper>{" "}
+													</span>{" "}
 													{stack}
 												</li>
 											))}
-										</StackList>
-									</StackWrapper>
-									<SiteUrlContainer>
-										<SubHeading>LIVE</SubHeading>
+										</ul>
+									</div>
+									<div className={styles.siteUrlContainer}>
+										<h2 className={styles.subHeading}>LIVE</h2>
 										<Button
 											target={"_blank"}
 											rel="noopener noreferrer"
@@ -55,289 +62,89 @@ function page() {
 										>
 											View Site
 										</Button>
-									</SiteUrlContainer>
-								</StackAndLinkContainer>
-							</TextOverviewWrapper>
+									</div>
+								</div>
+							</div>
 						</React.Fragment>
 					))}
-				</ProjectOverviewSection>
-			</Container>
-			<Spacer />
-			<GreyBackroundWrapper>
-				<Container>
-					<ProjectFunctionalitySection>
-						<TextWrapper>
-							<SubHeading>Project Purpose + Goal</SubHeading>
+				</section>
+			</div>
+			<span className={styles.spacer} />
+			<div className={styles.greyBackgroundWrapper}>
+				<div className={styles.container}>
+					<section className={styles.projectFunctionalitySection}>
+						<div className={styles.textWrapper}>
+							<h2 className={styles.subHeading}>Project Purpose + Goal</h2>
 							{project.projectPurpose.map((purpose, index) => (
 								<p key={index}>{purpose}</p>
 							))}
-						</TextWrapper>
-						<ImageAndTextWrapper>
+						</div>
+						<div className={styles.imageAndTextWrapper}>
 							{project.projectPurposeImage.map((image, index) => (
-								<ImgWrapper key={index}>
-									<TransparentImage src={image.imageSrc} alt={image.alt} />
-								</ImgWrapper>
+								<div
+									className={`${styles.imgWrapper} ${
+										index === 0 && styles.noBoxShadow
+									}`}
+									key={index}
+								>
+									<Image
+										priority
+										className={styles.styledImage}
+										src={image.imageSrc}
+										alt={image.alt}
+										width={image.width}
+										height={image.height}
+									/>
+								</div>
 							))}
-							<FeaturesWrapper>
-								<SubHeading>Core Functionality</SubHeading>
-								<FeaturesList>
+							<div className={styles.featuresWrapper}>
+								<h2 className={styles.subHeading}>Core Functionality</h2>
+								<ul>
 									{project.projectFunctionality.map((functionality, index) => (
-										<li key={index}>
-											<ArrowWrapper>
+										<li className={styles.featuresListItem} key={index}>
+											<div className={styles.arrowWrapper}>
 												<ArrowRight size={16} />
-											</ArrowWrapper>
+											</div>
 											<span>
-												<Highlight>{functionality.function}</Highlight> -{" "}
-												{functionality.description}
+												<strong className={styles.highlight}>
+													{functionality.function}
+												</strong>{" "}
+												- {functionality.description}
 											</span>
 										</li>
 									))}
-								</FeaturesList>
-							</FeaturesWrapper>
-						</ImageAndTextWrapper>
-					</ProjectFunctionalitySection>
-				</Container>
-			</GreyBackroundWrapper>
-			<Spacer />
-			<Container>
-				<LessonsLearnedSection>
-					<TextWrapper>
-						<SubHeading>Lessons Learned</SubHeading>
+								</ul>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<span className={styles.spacer} />
+			<div className={styles.container}>
+				<section className={styles.lessonLearnedSection}>
+					<div className={styles.textWrapper}>
+						<h2 className={styles.subHeading}>Lessons Learned</h2>
 						{project.lessonsLearned.map((lesson, index) => (
 							<React.Fragment key={index}>
-								<HighlightParagraph>{lesson.title}</HighlightParagraph>
+								<p className={styles.highlightParagraph}>{lesson.title}</p>
 								<p>{lesson.description}</p>
 							</React.Fragment>
 						))}
-					</TextWrapper>
-				</LessonsLearnedSection>
+					</div>
+				</section>
 				{project.lessonsLearnedImg.map((image, index) => (
-					<LessonsLearnedImgWrapper key={index}>
-						<img src={image.imageSrc} alt={image.alt} />
-					</LessonsLearnedImgWrapper>
+					<div className={styles.lessonsLearnedImgWrapper} key={index}>
+						<Image
+							className={styles.styledImage}
+							src={image.imageSrc}
+							alt={image.alt}
+							width={image.width}
+							height={image.height}
+						/>
+					</div>
 				))}
-			</Container>
-			<Spacer />
+			</div>
+			<span className={styles.spacer} />
 		</>
 	);
 }
-
-const Spacer = styled.span`
-	display: inline-block;
-	height: var(--space-xl-4);
-
-	@media ${QUERIES.tabletAndDown} {
-		height: var(--space-xl-3);
-	}
-`;
-
-const ArrowWrapper = styled.span`
-	transform: translateY(2px);
-`;
-
-const HyphenWrapper = styled.span`
-	display: inline-block;
-
-	svg {
-		transform: translateY(4px);
-	}
-`;
-
-const HighlightParagraph = styled.p`
-	font-size: var(--font-size-h3);
-`;
-
-const LessonsLearnedSection = styled.div`
-	display: flex;
-	gap: var(--space-xl-2);
-`;
-
-const TransparentImage = styled.img`
-	min-width: 0;
-`;
-
-const StackWrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-`;
-const ImageAndTextWrapper = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: var(--space-l);
-
-	@media (max-width: 57.5rem) {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-`;
-
-const FeatureHeading = styled.h3`
-	font-size: var(--font-size-h4);
-	text-transform: uppercase;
-	margin-bottom: var(--space-l);
-`;
-
-const Highlight = styled.strong`
-	background-color: var(--secondary-color--light);
-	padding: 1px 6px;
-	border-radius: 3px;
-`;
-const FeaturesList = styled.ul`
-	li {
-		gap: var(--space-xs);
-		display: flex;
-		align-items: flex-start;
-		margin-bottom: var(--space-m);
-	}
-`;
-
-const FeaturesWrapper = styled.div`
-	max-width: max(40%, 352px);
-	margin-left: auto;
-
-	@media (max-width: 57.5rem) {
-		margin-top: var(--space-l);
-		margin-left: 0;
-		max-width: fit-content;
-	}
-
-	@media ${QUERIES.mobileAndDown} {
-		max-width: 100%;
-	}
-`;
-
-const ProjectFunctionalitySection = styled.div`
-	display: flex;
-	padding: var(--space-xl-2) 0;
-	flex-direction: column;
-`;
-
-const GreyBackroundWrapper = styled.div`
-	background-color: var(--light-grey);
-`;
-
-const TextWrapper = styled.div`
-	max-width: max(60%, 400px);
-
-	@media (max-width: 57.5rem) {
-		max-width: 100%;
-	}
-`;
-
-const ImgWrapper = styled.div`
-	display: flex;
-	min-width: 0;
-	height: min-content;
-	width: 100%;
-	flex: 1 1 60%;
-`;
-
-const LessonsLearnedImgWrapper = styled.div`
-	display: flex;
-	margin-top: var(--space-xl-2);
-	justify-content: flex-end;
-	width: 100%;
-	height: 100%;
-
-	img {
-		max-width: 60%;
-		border-radius: var(--space-s);
-		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-		min-width: 0; // to ensure that image will scale smaller
-
-		@media ${QUERIES.tabletAndDown} {
-			max-width: 100%;
-		}
-	}
-`;
-
-const StackAndLinkContainer = styled.div`
-	display: flex;
-	align-items: flex-start;
-	margin-top: var(--space-l);
-	justify-content: space-between;
-	max-width: 80%;
-
-	@media ${QUERIES.mobileAndDown} {
-		flex-direction: column;
-		gap: var(--space-xl);
-		max-width: 100%;
-	}
-`;
-
-const SiteUrlContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	@media ${QUERIES.mobileAndDown} {
-		align-items: flex-start;
-	}
-`;
-
-const SubHeading = styled.h2`
-	font-size: var(--font-size-h3);
-	text-transform: uppercase;
-	margin-bottom: var(--space-l);
-`;
-
-const StackList = styled.ul`
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--space-s);
-	max-width: max-content;
-	flex-direction: column;
-
-	@media ${QUERIES.mobileAndDown} {
-		flex-direction: row;
-	}
-`;
-
-const StyledImage = styled.img`
-	object-fit: contain;
-	border-radius: var(--space-s);
-	object-position: top;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-	min-width: 0; // to ensure that image will scale smaller
-`;
-
-const TextOverviewWrapper = styled.div`
-	flex: 1 1 40%;
-`;
-
-const ProjectHeading = styled.h1`
-	font-weight: var(--font-weight-semi-bold);
-	font-size: var(--font-size-h1);
-	text-transform: uppercase;
-	margin-top: var(--space-xl-3);
-`;
-
-const Container = styled.div`
-	margin-inline: var(--space-xl-6);
-
-	@media ${QUERIES.tabletAndDown} {
-		margin-inline: var(--space-xl-4);
-	}
-
-	@media ${QUERIES.mobileAndDown} {
-		margin-inline: var(--space-xl-2);
-	}
-
-	@media ${QUERIES.smallMobileAndDown} {
-		margin-inline: var(--space-l);
-	}
-`;
-
-const ProjectOverviewSection = styled.section`
-	display: flex;
-	gap: var(--space-xl-3);
-	margin-top: var(--space-xl-2);
-
-	@media ${QUERIES.tabletAndDown} {
-		flex-flow: column-reverse;
-		gap: var(--space-xl);
-	}
-`;
-
-export default page;

@@ -241,7 +241,7 @@ export const projectCaseStudyData = [
 			},
 		],
 		projectPurpose: [
-			"The NCEA website rebuild aimed to enhance usability for secondary teachers and school leaders by making information and resources easier to find.",
+			"The NCEA website rebuild aimed to enhance usability for secondary school teachers and leaders by making information and resources easier to find.",
 			"Features were designed with Drupal’s user workflow management in mind to support the site's need for frequent content updates.",
 		],
 		projectPurposeImage: [
@@ -259,7 +259,7 @@ export const projectCaseStudyData = [
 					"redesigned taxonomy structures to improve content relationships",
 			},
 			{
-				function: "Site-wide translation",
+				function: "Site-wide Translation",
 				description:
 					"enabled multilingual content with a toggle for users to switch languages.",
 			},
@@ -295,7 +295,7 @@ export const projectCaseStudyData = [
 				title:
 					"I also co-led an accessibility audit of the existing site content and structure.",
 				description:
-					"My colleague and I then collaborated with the wider web team to research and implement a framework that would guide all team members—developers, designers, and web advisors—in adhering to accessibility best practices. As a result of this process, accessibility knowledge across the team grew significantly, allowing us to address existing issues and establish a clear approach to prevent future challenges.",
+					"My colleague and I collaborated with the wider web team to research and implement a framework that would help developers, designers, and web advisors consistently follow accessibility best practices. As a result of this process, accessibility knowledge across the team grew significantly, allowing us to address existing issues and establish a clear approach to prevent future challenges.",
 			},
 		],
 		lessonsLearnedImg: [

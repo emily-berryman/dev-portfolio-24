@@ -186,22 +186,19 @@ export const projectCaseStudyData = [
 		],
 		lessonsLearned: [
 			{
-				title:
-					"I learnt so much through this project - far more than I can list here! Working in a small dev team, I played a key role in building all of the core functionality mentioned above.",
+				title: "",
 				description:
-					"Some of the most valuable areas of learning included designing database structures, applying the MVC pattern to structure our app and deepening my knowledge in React by building a well-componentized front-end. I particularly enjoyed working with Laravel and its Eloquent ORM, which simplified the process of defining database models, establishing relationships and querying data.",
+					"I learnt so much through this project - far more than I can list here! Working in a small dev team, I played a key role in building all of the core functionality mentioned above. Some of the most valuable areas of learning included designing database structures, applying the MVC pattern to structure our app and deepening my knowledge in React by building a well-componentized front-end. I particularly enjoyed working with Laravel and its Eloquent ORM, which simplified the process of defining database models, establishing relationships and querying data.",
 			},
 			{
-				title:
-					"One of my key contributions was building the recipe library search, a feature I built from backend logic to frontend implementation.",
+				title: "Recipe Library Search",
 				description:
-					"I indexed recipe data using Algolia’s search API with Laravel Scout which creates an index per model, but I needed to make fields from related models searchable too. To solve this, I created a custom searchable array in the Recipe model, extracting and restructuring relevant data before integrating it into the search index. This pattern was then extended to other search indices across the site, enabling a consistent and scalable search implementation.",
+					"One of my key contributions was building the recipe library search, a feature I built from backend logic to frontend implementation. I indexed recipe data using Algolia’s search API with Laravel Scout which creates an index per model, but I needed to make fields from related models searchable too. To solve this, I created a custom searchable array in the Recipe model, extracting and restructuring relevant data before integrating it into the search index. This pattern was then extended to other search indices across the site, enabling a consistent and scalable search implementation.",
 			},
 			{
-				title:
-					"A big lesson I took away was the importance of consistent code structure, especially as a project scales.",
+				title: "Consistent Code Practices",
 				description:
-					"Early on, I noticed inconsistencies in how formatting, structure, and best practices were being applied, leading to extra time spent during PR reviews.To address this, I researched, implemented, and documented a semi-automated linting and formatting solution to support consistent practices. I also created README guidelines for controller patterns and collaborated with colleagues to integrate linting checks into our GitHub Actions workflow. This ensured that developers were alerted to issues before opening a PR, significantly reducing back-and-forth in reviews.",
+					"A big lesson I took away was the importance of consistent code structure, especially as a project scales. Early on, I noticed inconsistencies in how formatting, structure, and best practices were being applied, leading to extra time spent during PR reviews.To address this, I researched, implemented, and documented a semi-automated linting and formatting solution to support consistent practices. I also created README guidelines for controller patterns and collaborated with colleagues to integrate linting checks into our GitHub Actions workflow. This ensured that developers were alerted to issues before opening a PR, significantly reducing back-and-forth in reviews.",
 			},
 		],
 		lessonsLearnedImg: [
@@ -280,22 +277,19 @@ export const projectCaseStudyData = [
 		],
 		lessonsLearned: [
 			{
-				title:
-					"I joined partway through the rebuild, and was mentored by two senior developers who played an important role in honing my dev skills post graduation from Dev Academy.",
+				title: "",
 				description:
-					"Their guidance helped me deepen my understanding of clean code practices, accessibility-focused development, testing, responsive design, and collaborative coding approaches.",
+					"I joined partway through the rebuild, and was mentored by two senior developers who played an important role in honing my dev skills post graduation from Dev Academy. Their guidance helped me deepen my understanding of clean code practices, accessibility-focused development, testing, responsive design, and collaborative coding approaches.",
 			},
 			{
-				title:
-					"Building the initial iteration of the subject glossary was one of my first key responsibilities.",
+				title: "Subject Glossary",
 				description:
-					"I created a content glossary taxonomy within Drupal, which was then pre-processed to integrate with Algolia’s search API. This allowed users to filter and search for terms, while also viewing how those terms were used across different subject areas. There were several complex factors and logic considerations to make this functionality work seamlessly. I was also responsible for this feature end-to-end, developing a responsive and accessible front end with Vue.js for a smooth user experience.",
+					"Building the initial iteration of the subject glossary was one of my first key responsibilities. I created a content glossary taxonomy within Drupal, which was then pre-processed to integrate with Algolia’s search API. This allowed users to filter and search for terms, while also viewing how those terms were used across different subject areas. There were several complex factors and logic considerations to make this functionality work seamlessly. I was also responsible for this feature end-to-end, developing a responsive and accessible front end with Vue.js for a smooth user experience.",
 			},
 			{
-				title:
-					"I also co-led an accessibility audit of the existing site content and structure.",
+				title: "Accessibility Focused Development",
 				description:
-					"My colleague and I collaborated with the wider web team to research and implement a framework that would help developers, designers, and web advisors consistently follow accessibility best practices. As a result of this process, accessibility knowledge across the team grew significantly, allowing us to address existing issues and establish a clear approach to prevent future challenges.",
+					"I also co-led an accessibility audit of the existing site content and structure. My colleague and I collaborated with the wider web team to research and implement a framework that would help developers, designers, and web advisors consistently follow accessibility best practices. As a result of this process, accessibility knowledge across the team grew significantly, allowing us to address existing issues and establish a clear approach to prevent future challenges.",
 			},
 		],
 		lessonsLearnedImg: [

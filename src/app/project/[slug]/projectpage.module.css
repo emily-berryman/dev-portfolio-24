@@ -21,8 +21,9 @@
 	transform: translateY(4px);
 }
 
-.highlightParagraph {
+.lessonTitle {
 	font-size: var(--font-size-h3);
+	margin-bottom: var(--space-m);
 }
 
 .lessonsLearnedSection {
@@ -164,7 +165,7 @@
 }
 
 .subHeading {
-	font-size: var(--font-size-h3);
+	font-size: var(--font-size-h2);
 	text-transform: uppercase;
 	margin-bottom: var(--space-l);
 }

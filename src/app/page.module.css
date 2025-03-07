@@ -51,7 +51,7 @@
 }
 
 .workSection {
-	margin: 0 var(--space-xl-2) var(--space-xl-2);
+	margin: 0 var(--space-xl-2) var(--space-xl-3);
 }
 
 @media (max-width: 26.35rem) {

@@ -126,7 +126,9 @@ export default async function ProjectPage({
 						<h2 className={styles.subHeading}>Lessons Learned</h2>
 						{project.lessonsLearned.map((lesson, index) => (
 							<React.Fragment key={index}>
-								<p className={styles.highlightParagraph}>{lesson.title}</p>
+								{lesson.title && (
+									<h3 className={styles.lessonTitle}>{lesson.title}</h3>
+								)}
 								<p>{lesson.description}</p>
 							</React.Fragment>
 						))}

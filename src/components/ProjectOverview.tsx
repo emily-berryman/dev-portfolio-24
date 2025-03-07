@@ -36,7 +36,7 @@ function ProjectOverview({ projects }: Props) {
 						</span>
 						<div className={styles.linkWrapper}>
 							<Button target={"_self"} href={project.url} passHref>
-								View Project
+								Case Study
 							</Button>
 						</div>
 					</div>
